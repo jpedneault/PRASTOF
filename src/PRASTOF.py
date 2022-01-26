@@ -6,7 +6,7 @@ import pandas as pd
 
 # Change the towards ODYM package.
 # For more details on ODYM see DOI: 10.1111/jiec.12952
-sys.path.append('copy your path to ODYM modules')
+sys.path.append(r'C:\Users\julie\OneDrive - polymtl.ca\Phd_CIRAIG\4.Coeur\Codes\ODYM\ODYM-master\odym\modules')
 
 import ODYM_Classes as msc  # import the ODYM class file
 import ODYM_Functions as msf  # import the ODYM function file
@@ -1239,7 +1239,7 @@ def projection(dataframe, year_0):
     # Empty df with new dimension, index and columns
     dataframe_plus = pd.DataFrame(index=dataframe.index, columns=x_all)
 
-    # For everyline, find the appropriate paramter for extrapolation and extrapolate
+    # For everyline, find the appropriate parameter for extrapolation and extrapolate
     for ix in dataframe.index:
         b = make_interp_spline(x, dataframe.loc[ix, :].values, bc_type=([(2, 0)], [(1, 0)]))
         dataframe_plus.loc[ix, :] = b(x_all)
